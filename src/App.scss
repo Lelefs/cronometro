@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    min-height: 100%;
+}
+
+body {
+    background-color: red;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body, input, button {
+    font: 16px 'Roboto', Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    &:enabled:hover {
+        filter: brightness(90%);
+    }
+}
+
+.truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.App {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.App-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+
+    svg {
+        cursor: pointer;
+        filter: brightness(90%);
+
+        &:hover {
+            filter: brightness(100%);
+        }
+    }
+}
+
+.main-content {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+
+    h3 {
+        font-size: 250px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    p + p {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
+
+.divVazia {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}
+
+.form {
+    position: absolute;
+    top: 95px;
+    background: red;
+    width: 100%;
+    height: 400px;
+    transition: linear 0.2s;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input {
+            color: #000;
+            font-size: 20px;
+            width: 80px;
+            padding: 5px 10px;
+        }
+    }
+
+    &.esconder {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        top: 50px;
+        padding-top: 0;
+    }
+}
