@@ -10,4 +10,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+//Service worker para funcionar o PWA
 serviceWorker.register();
