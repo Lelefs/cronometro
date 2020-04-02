@@ -2,7 +2,6 @@
   "name": "cronometro",
   "version": "0.1.0",
   "description": "Cronometro para exercícios em casa",
-  "main": "index.js",
   "author": "Leandro Finochio",
   "license": "ISC",
   "dependencies": {

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.efc81544.chunk.css",
+    "main.js": "/static/js/main.200cb95d.chunk.js",
+    "main.js.map": "/static/js/main.200cb95d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3a1f6baa.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3a1f6baa.js.map",
+    "static/js/2.2dc7c50e.chunk.js": "/static/js/2.2dc7c50e.chunk.js",
+    "static/js/2.2dc7c50e.chunk.js.map": "/static/js/2.2dc7c50e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9db4ef9162e1d55064fe1e133aa19915.js": "/precache-manifest.9db4ef9162e1d55064fe1e133aa19915.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.efc81544.chunk.css.map": "/static/css/main.efc81544.chunk.css.map",
+    "static/js/2.2dc7c50e.chunk.js.LICENSE.txt": "/static/js/2.2dc7c50e.chunk.js.LICENSE.txt",
+    "static/media/beeponce.mp3": "/static/media/beeponce.c1b2e89b.mp3",
+    "static/media/voyagermessage.mp3": "/static/media/voyagermessage.21436201.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a1f6baa.js",
+    "static/js/2.2dc7c50e.chunk.js",
+    "static/css/main.efc81544.chunk.css",
+    "static/js/main.200cb95d.chunk.js"
+  ]
+}

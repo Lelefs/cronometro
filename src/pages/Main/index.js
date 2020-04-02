@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
+import beeponce from '../../assets/music/beeponce.mp3';
+import voyagermessage from '../../assets/music/voyagermessage.mp3';
 import { FiMenu, FiPlay, FiSquare, FiPause } from 'react-icons/fi';
 
 export default function Main() {
@@ -16,6 +18,8 @@ export default function Main() {
     const [descricao, setDescricao] = useState('Vamos começar');
     const [estado, setEstado] = useState('Parado');
     const [mostrarOuNao, setMostrarOuNao] = useState('esconder');
+    let audioPreparar = new Audio(beeponce);
+    let audioComecar = new Audio(voyagermessage);
 
     useEffect(() => {
         let interval = null;
@@ -26,7 +30,9 @@ export default function Main() {
                 switch (descricao) {
 
                     case 'Prepare-se':
+                        pausarAudio('audioComecar');
                         if (tempo === parseInt(tempoPreparacao)) {
+                            iniciarAudio('audioPreparar');
                             setTempo(0);
                             setDescricao('VALENDOOOOO!');
                             setExercicios(exercicios + 1);
@@ -39,7 +45,9 @@ export default function Main() {
                         break;
 
                     case 'VALENDOOOOO!':
+                        pausarAudio('audioPreparar');
                         if (tempo === parseInt(tempoExercicio)) {
+                            iniciarAudio('audioComecar');
                             setTempo(0);
 
                             if (exercicios === parseInt(exerciciosPorSerie)) {
@@ -79,8 +87,16 @@ export default function Main() {
         }
 
         return () => clearInterval(interval);
-
+    // eslint-disable-next-line
     }, [ativo, tempo]);
+
+    function iniciarAudio (audio) {
+        audio === 'audioComear' ? audioComecar.play() : audioPreparar.play();
+    };
+
+    function pausarAudio (audio) {
+        audio === 'audioComear' ? audioComecar.pause() : audioPreparar.pause();
+    };
 
     function iniciarCronometro() {
         if (!parseInt(tempoExercicio) > 0 || !parseInt(tempoDescanso) > 0 || !parseInt(tempoPreparacao) > 0 || !parseInt(exerciciosPorSerie) > 0 || !parseInt(series) > 0) {
