@@ -1,9 +1,19 @@
 {
   "name": "cronometro",
   "version": "0.1.0",
+    "engines": { 
+        "npm": "6.12.0", "node": "10.16.3" 
+    },
+    "main": "index.js",
   "description": "Cronometro para exercícios em casa",
   "author": "Leandro Finochio",
   "license": "ISC",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,12 +24,6 @@
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
