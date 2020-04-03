@@ -91,11 +91,13 @@ export default function Main() {
     }, [ativo, tempo]);
 
     function iniciarAudio (audio) {
-        audio === 'audioComear' ? audioComecar.play() : audioPreparar.play();
+        console.log('iniciar audio:', audio);
+        
+        audio === 'audioComecar' ? audioComecar.play() : audioPreparar.play();
     };
 
     function pausarAudio (audio) {
-        audio === 'audioComear' ? audioComecar.pause() : audioPreparar.pause();
+        audio === 'audioComecar' ? audioComecar.pause() : audioPreparar.pause();
     };
 
     function iniciarCronometro() {
@@ -141,7 +143,11 @@ export default function Main() {
     return (
         <div className="App">
             <header className="App-header">
-                <FiMenu size={25} color="#fff" onClick={() => toggleMenu()} />
+                { estado === 'Pausado' || ativo
+                    ? <FiSquare size={25} color="#fff" onClick={ () => pararCronometro() } />
+                    : <FiMenu size={25} color="#fff" onClick={() => toggleMenu()} />
+                }
+
                 <div className={`form ${mostrarOuNao}`}>
                     <div>
                         <label htmlFor="tempoExercicioInput">Tempo dos exercícios</label>
@@ -174,10 +180,7 @@ export default function Main() {
                     : <FiPause size={25} color="#fff" onClick={ () => pausarCronometro() } /> 
                 }
 
-                { estado === 'Pausado' || ativo
-                    ? <FiSquare size={25} color="#fff" onClick={ () => pararCronometro() } />
-                    : <div className="divVazia"></div>
-                }
+                <div className="divVazia"></div>
             </header>
 
             <div className="main-content">
